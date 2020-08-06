@@ -1,12 +1,12 @@
 <!--
    File: index.html
-   91.461 Assignment: Creating an Interactive Dynamic Table
+   91.461 Assignment: Creating an Interactive Dynamic Table and using jquery plugin for validation
    Corina Mangione, UMass Lowell Computer Science, corina_mangione@student.uml.edu
    Copyright (c) 2020 by Corina Mangione. All rights reserved. May be
    freely
    copied or excerpted for educational purposes with credit to the
    author.
-   updated by Corina Mangione on July 29, 2020
+   updated by Corina Mangione on August 5, 2020
    -->
 <!DOCTYPE html>
 <html lang="en">
@@ -21,29 +21,31 @@
       <div id="inner">
          <h1> Multiplication Table </h1>
          <p> Please enter a number between -50 and 50 and a Multiplication table will be created. The horizontal
-            first number and the vertical first number need to be smaller than the horizontal last Number
+            first number and the vertical first number need to be smaller than the horizontal last number
             and vertical last number respectively.
          </p>
          <!-- Creates user input form -->
-         <form>
+         <form id = "multiplication">
             <label for="horz_first">Horizontal First Number:</label><br>
-            <input type="number" id="horz_first" name="horz_first"><br>
+            <input type="number" value="" required id="horz_first" name="horz_first"><br>
             <label for="horz_last">Horizontal Last Number:</label><br>
-            <input type="number" id="horz_last" name="horz_last"><br>
+            <input type="number" value="" required id="horz_last" name="horz_last"><br>
             <label for="vert_first">Vertical First Number:</label><br>
-            <input type="number" id="vert_first" name="vert_first"><br>
+            <input type="number" value="" required id="vert_first" name="vert_first"><br>
             <label for="vert_last">Vertical Last Number:</label><br>
-            <input type="number" id="vert_last" name="vert_last"><br>
-            <button class="button" name="submit" type="submit" value="submit"
-               onclick="event.preventDefault();  doItAll(); return false;">Submit</button>
+            <input type="number" value="" required id="vert_last" name="vert_last"><br>
+            <button type="button" id="createButton">Create Table</button>
          </form>
          <p id="errorString" class = 'error-range horz-order'></p>
+         <div style="overflow-x:visible;" id="div1">
+         </div>
       </div>
-      <!--<table id = "multTable" >
-         </table>-->
-      <div style="overflow-x:auto;">
+      <!--  <div style="overflow-x:auto;">
          <table id="div1"></table>
-      </div>
+         </div>-->
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+      <script type='text/javascript' src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+      <script type='text/javascript' src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/additional-methods.js"></script>
       <script src = "table.js"></script>
    </body>
 </html>
